@@ -1,0 +1,32 @@
+19086
+
+formatting..:   0%|          | 0/19086 [00:00<?, ?it/s]
+formatting..: 100%|██████████| 19086/19086 [00:00<00:00, 213971.99it/s]
+
+Saving the dataset (0/1 shards):   0%|          | 0/19086 [00:00<?, ? examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 19086/19086 [00:00<00:00, 448079.20 examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 19086/19086 [00:00<00:00, 446233.40 examples/s]
+`low_cpu_mem_usage` was None, now set to True since model is quantized.
+
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/7 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/rmadar/ondemand/data/sys/myjobs/projects/FinGPT/FinGPT.py", line 175, in <module>
+    model = AutoModel.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rmadar/ondemand/data/sys/myjobs/projects/fingpt/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 556, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rmadar/ondemand/data/sys/myjobs/projects/fingpt/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3502, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rmadar/ondemand/data/sys/myjobs/projects/fingpt/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3926, in _load_pretrained_model
+    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rmadar/ondemand/data/sys/myjobs/projects/fingpt/lib/python3.12/site-packages/transformers/modeling_utils.py", line 802, in _load_state_dict_into_meta_model
+    or (not hf_quantizer.check_quantized_param(model, param, param_name, state_dict))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rmadar/ondemand/data/sys/myjobs/projects/fingpt/lib/python3.12/site-packages/transformers/quantizers/quantizer_bnb_4bit.py", line 124, in check_quantized_param
+    if isinstance(module._parameters[tensor_name], bnb.nn.Params4bit):
+                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'inv_freq'
